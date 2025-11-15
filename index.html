@@ -1,0 +1,376 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            * {
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: "Poppins";
+                color: #16161d;
+                text-align: center;
+            }
+
+            p {
+                font-size: 20px;
+            }
+
+            .section {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                padding: 120px 80px;
+            }
+
+            .title {
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+                background-color: #eee;
+                font-weight: bold;
+                font-size: 16px;
+            }
+
+            .namedrop {
+                margin-top: 40px;
+                max-width: 750px;
+            }
+
+            .namedrop span {
+                font-weight: bold;
+                color: #6829c2;
+            }
+
+            @media only screen and (max-width: 850px) {
+                .split .combinations,
+                .section,
+                .about {
+                    padding: 60px 40px;
+                    width: 100%;
+                }
+
+                .section.splash {
+                    padding: 120px 40px;
+                }
+
+                .split .image {
+                    height: 200px;
+                }
+
+                .collection .item {
+                    margin: 20px;
+                }
+            }
+
+            @media only screen and (min-width: 850px) {
+                .split {
+                    display: flex;
+                }
+
+                .split .section,
+                .split .image,
+                .split .combinations {
+                    flex: 1;
+                    max-width: 50%;
+                }
+
+                .about {
+                    padding: 120px 80px;
+                }
+            }
+
+            .image {
+                background-image: url(./Computer-Science-Vancouver-BA.jpg);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            .combinations {
+                background-color: #6829c2;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .combinations table {
+                border-collapse: collapse;
+                border: none;
+                text-align: left;
+                font-size: 26px;
+                font-weight: 500;
+            }
+
+            .combinations td {
+                padding: 0 10px;
+            }
+
+            .combinations .divider {
+                height: 2px;
+                background-color: #fff;
+                width: 100%;
+                margin: 5px 0;
+            }
+
+            @keyframes fade {
+                0%,
+                100% {
+                    opacity: 0;
+                }
+
+                25%,
+                75% {
+                    opacity: 1;
+                }
+            }
+
+            .options {
+                display: grid;
+                grid-template: 1fr / 1fr;
+                align-items: center;
+                overflow: hidden;
+            }
+
+            .options div {
+                opacity: 0;
+                transition: 1s opacity;
+                grid-area: 1 / 1 / -1 / -1;
+            }
+
+            .options div.visible {
+                opacity: 1;
+            }
+
+            .collection {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .item {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                margin: 40px;
+                max-width: 400px;
+            }
+
+            a {
+                color: inherit;
+            }
+
+            .splash {
+                padding: 180px 40px;
+                background-color: #6829c2;
+                color: #fff;
+                gap: 40px;
+            }
+
+            .splashitems {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .splashitems .button {
+                padding: 10px 20px;
+                border: 1px solid #fff;
+                text-decoration: none;
+                font-size: inherit;
+                font-weight: bold;
+            }
+
+            .splashitems .sponsor {
+                max-height: 60px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="section splash">
+            <img src="./logo.svg" style="height: 64px" />
+            <h1>A home for CS students in UBC Arts</h1>
+            <div class="splashitems">
+                <a class="button" href="https://discord.gg/A9JaQnWJaM"
+                    >Join our Discord server</a
+                >
+            </div>
+            <p>Supported by...</p>
+            <div class="splashitems">
+                <a href="https://cs.ubc.ca"
+                    ><img class="sponsor" src="./sponsors/ubccs.png"
+                /></a>
+                <a href="#contact"
+                    ><img class="sponsor" src="./sponsors/placeholder.png"
+                /></a>
+            </div>
+        </div>
+        <div class="section about">
+            <p>
+                UBC offers their world-class Computer Science program through 3
+                schools:
+            </p>
+            <p style="font-size: 26px">
+                Science, Business, and
+                <span style="color: #6829c2; font-weight: bold">Arts</span>
+            </p>
+            <p class="namedrop">
+                We officially represent 140+ <span>B</span>achelor of
+                <span>A</span>rts <span>S</span>tudents <span>i</span>n
+                <span>C</span>omputer <span>S</span>cience at UBC's Vancouver
+                campus.
+            </p>
+        </div>
+        <p class="title">WHAT IS THE PROGRAM?</p>
+        <div class="split">
+            <div class="section">
+                <p>
+                    Our students study a traditional computer science curriculum
+                    while basing the rest of their degrees in the humanities,
+                    social sciences, and creative/performing arts.
+                </p>
+            </div>
+            <div class="image"></div>
+        </div>
+        <div class="split">
+            <div class="combinations">
+                <table>
+                    <tr>
+                        <td></td>
+                        <td>Computer Science</td>
+                    </tr>
+                    <tr>
+                        <td>+</td>
+                        <td class="options">
+                            <div class="visible">Psychology</div>
+                            <div>Linguistics</div>
+                            <div>Visual Arts</div>
+                            <div>Music</div>
+                            <div>Economics</div>
+                            <div>English</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><div class="divider"></div></td>
+                    </tr>
+                    <tr>
+                        <td>=</td>
+                        <td class="options">
+                            <div class="visible">User Experience Research</div>
+                            <div>Computational Linguistics</div>
+                            <div>User Interface Design</div>
+                            <div>Music Technology</div>
+                            <div>Computational Finance</div>
+                            <div>Technical Writing</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="section">
+                <p>
+                    Unlike the other 2 schools, our students are freely
+                    permitted to double-major to combine their skills in
+                    computation and software with any field in the arts.
+                </p>
+            </div>
+        </div>
+        <p class="title">WHO ARE WE?</p>
+        <div class="section">
+            <h2>Our team:</h2>
+            <div class="collection">
+                <div class="item">
+                    <h3>Ben Beckford</h3>
+                    <p>President</p>
+                </div>
+                <div class="item">
+                    <h3>Mitchell Herbst</h3>
+                    <p>Treasurer</p>
+                </div>
+                <div class="item">
+                    <h3>Andy Li</h3>
+                    <p>VP Events</p>
+                </div>
+                <div class="item">
+                    <h3>Mikayla Lim</h3>
+                    <p>VP Media</p>
+                </div>
+                <div class="item">
+                    <h3>Markus Fong</h3>
+                    <p>VP Relations</p>
+                </div>
+            </div>
+            <h2>Our work:</h2>
+            <div class="collection">
+                <div class="item">
+                    <h3>Information</h3>
+                    <p>
+                        We maintain the academic student handbook, combining
+                        official university documentation and real-life
+                        knowledge from peers into one cohesive package.
+                    </p>
+                </div>
+                <div class="item">
+                    <h3>Community</h3>
+                    <p>
+                        We host social, academic, and career-based events to
+                        build connections in our cohorts that last from their
+                        first years to their graduations.
+                    </p>
+                </div>
+                <div class="item">
+                    <h3>Advocacy</h3>
+                    <p>
+                        We promote the B.A. in CS program to push for increased
+                        awareness from students, recognition from the industry,
+                        and support from the university.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <p class="title">GET IN TOUCH</p>
+        <div
+            id="contact"
+            class="section"
+            style="background-color: #6829c2; color: #fff"
+        >
+            <h2>We're excited to work with you!</h2>
+            <p>
+                Send an email to
+                <a href="mailto:contact@ubcbasics.org">contact@ubcbasics.org</a>
+                for any inquiries.
+            </p>
+        </div>
+        <script>
+            setInterval(() => {
+                for (const visible of document.getElementsByClassName(
+                    "visible",
+                )) {
+                    const next =
+                        visible.nextElementSibling ??
+                        visible.parentElement.firstElementChild;
+                    visible.classList.remove("visible");
+                    next.classList.add("visible");
+                }
+            }, 3000);
+        </script>
+    </body>
+</html>
